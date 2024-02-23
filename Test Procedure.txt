@@ -1,0 +1,19 @@
+Test Procedure:
+
+Import the provided JSON data into MongoDB using mongoimport.
+Run the Node.js server containing the API endpoint.
+Send a GET request to the /backend-courses endpoint.
+Verify that the response contains the published backend courses, sorted alphabetically by their names, with the name and specialization extracted correctly.
+Ensure that the API handles errors gracefully and provides appropriate error messages.
+Test with different scenarios, such as empty courses, missing data, or invalid input, to ensure robustness.
+
+
+Challenges Faced and Solutions Implemented:
+
+Data Structure: The nested structure of the JSON data required traversing multiple levels to extract the necessary information. This was addressed by using nested loops and object traversal techniques.
+
+Data Validation: Ensuring that only published backend courses are retrieved and that the retrieved data is accurate required careful validation at each step. This was achieved by filtering courses based on their tags and ensuring proper error handling for any unexpected scenarios.
+
+Sorting: Alphabetically sorting the courses by name posed a challenge due to the nested structure of the data. The solution involved flattening the structure and sorting the courses based on their names.
+
+Error Handling: Handling errors gracefully, such as database connection errors or internal server errors, was crucial for the reliability of the API. Proper error handling and response messages were implemented to communicate issues effectively to the client.
